@@ -43,12 +43,31 @@ header {
    margin-bottom: 20px;
 }
 
-
-
+/* //////////////////// header //////////////////// */
+/* //////////////////// main //////////////////// */
 main {
    background-color: var(--color-orange);
    width: 100%;
    height: 1000px;
+   padding-top: 1%;
 }
 
-/* //////////////////// header //////////////////// */
+
+.post{
+   padding: 1em;
+   border: 0.1em solid black;
+}
+
+.post-item{
+   border: 0.1em solid black;
+   margin: 1em 0;
+   
+}
+.post-img{
+   height: 100px;
+   background: url(../pic/layered-peaks-haikei.svg);
+
+}
+
+
+/* //////////////////// main //////////////////// */
