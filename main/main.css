@@ -4,7 +4,8 @@
 }
 
 body {
-   height: 10000px;
+   /* background: linear-gradient(180deg,var(--color-dark-purple) 90%, var(--color-dark-blue)100%); */
+   height: 1000px;
 }
 
 :root {
@@ -46,28 +47,29 @@ header {
 /* //////////////////// header //////////////////// */
 /* //////////////////// main //////////////////// */
 main {
-   background-color: var(--color-orange);
-   width: 100%;
-   height: 1000px;
+   background-color: var(--color-dark-purple);
+   height: 5000px;
    padding-top: 1%;
 }
 
-
-.post{
+.post {
+   color: var(--color-gray);
    padding: 1em;
-   border: 0.1em solid black;
+   border: 0.1em solid white;
 }
 
-.post-item{
-   border: 0.1em solid black;
-   margin: 1em 0;
-   
-}
-.post-img{
-   height: 100px;
-   background: url(../pic/layered-peaks-haikei.svg);
-
+.post-title {
+   margin-bottom: 16px;
+   padding-bottom: 16px;
+   border-bottom: 4px solid red;
+   font-weight: bold;
+   font-size: 1.6em;
 }
 
+@media (max-width: 767px) {
+   #post-item {
+      border-bottom: 1px solid red;
+   }
+}
 
 /* //////////////////// main //////////////////// */
