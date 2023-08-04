@@ -1,12 +1,12 @@
 :root {
-   --color-dark-blue: #001220;
-   --color-dark-purple: #2a0b45;
-   --color-pinkish-purple: #6d0354;
-   --color-redish-pink: #ab0650;
-   --color-red: #db393b;
-   --color-orange: #F5730A;
-   --color-gray: #d0d0d0;
-   --color-pure-white: #ffffff;
+   --dark-blue: #001220;
+   --dark-purple: #2a0b45;
+   --pinkish-purple: #6d0354;
+   --redish-pink: #ab0650;
+   --red: #db393b;
+   --orange: #F5730A;
+   --gray: #d0d0d0;
+   --pure-white: #ffffff;
 
 }
 
@@ -27,7 +27,7 @@
 
 .btn {
    color: white;
-   background: linear-gradient(45deg, var(--color-pinkish-purple) 10%, var(--color-redish-pink)35%,var(--color-red)75%,var(--color-orange)100%);
+   background: linear-gradient(45deg, var(--color-pinkish-purple) 10%, var(--color-redish-pink)35%, var(--color-red)75%, var(--color-orange)100%);
    border: none;
    box-shadow: none;
    border-radius: 5px;
@@ -43,7 +43,7 @@ form #search-btn {
    margin-left: 10px;
 }
 
-form #search-bar.close {
+form #search-bar.closed {
    width: 0;
    margin: 0;
    padding: 0;
@@ -52,10 +52,42 @@ form #search-bar.close {
 
 }
 
-form #search-bar.open {
+form #search-bar.opened {
    margin: 0 10px;
    transition: .3s;
-   width: 10vw;
+   width: 250px;
 
 
+}
+
+/* //////////////////// side-bar //////////////////// */
+
+
+#side-bar {
+   width: 180px;
+   height: 100vh;
+   position: fixed;
+   background-color: var(--gray);
+   z-index: 9999;
+   overflow-x: hidden;
+   list-style: none;
+   padding-top: 20px;
+   transition: .3s;
+
+}
+
+#side-bar li :hover {
+   background-color: var(--dark-blue);
+   color: var(--gray);
+   transition: .3s;
+
+}
+
+
+#side-bar.closed {
+   left: -180px;
+}
+
+#side-bar.opened {
+   left: 0;
 }

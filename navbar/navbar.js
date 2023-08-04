@@ -1,20 +1,41 @@
-// Fetch and insert navbar
+// sidebar toggle
 
-function searchToggle(){
-  const searchBar = document.querySelector("#search-bar");
-  const searchButton = document.querySelector("#search-btn");
-  if (searchBar.classList.contains("close")) {
-    searchBar.classList.replace("close", "open");
+function sideBarToggle(){
+  const sideBtn = document.querySelector("#sidebar-btn")
+  const sidebar = document.querySelector("#side-bar")
+  
+  if (sidebar.classList.contains("closed")) {
+    sidebar.classList.replace("closed", "opened");
   } else {
-    searchBar.classList.replace("open", "close");
+    sidebar.classList.replace("opened", "closed");
   }
   document.addEventListener("click", function (event) {
-    if (!searchBar.contains(event.target) && !searchButton.contains(event.target)) {
-      searchBar.classList.replace("open", "close");
+    if (!sidebar.contains(event.target) && !sideBtn.contains(event.target)) {
+      sidebar.classList.replace("opened", "closed");
     }
   });
 }
 
+
+// search toggle
+
+function searchToggle(){
+  const searchBar = document.querySelector("#search-bar");
+  const searchButton = document.querySelector("#search-btn");
+  if (searchBar.classList.contains("closed")) {
+    searchBar.classList.replace("closed", "opened");
+  } else {
+    searchBar.classList.replace("opened", "closed");
+  }
+  document.addEventListener("click", function (event) {
+    if (!searchBar.contains(event.target) && !searchButton.contains(event.target)) {
+      searchBar.classList.replace("opened", "closed");
+    }
+  });
+}
+
+
+// Fetch and insert navbar
 
 async function fetchNav() {
   try {
