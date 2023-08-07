@@ -48,24 +48,29 @@ header {
 main {
    background-color: var(--color-dark-purple);
    height: 5000px;
+   padding: 1px;
 }
 
 .post {
-   color: var(--color-gray);
+   color: #001220;
    padding: 1em;
    border: 0.1em solid white;
+   background-color: var(--color-gray);
+   border-radius: 35px;
+
 }
 
-.post-title {
-   margin-bottom: 16px;
-   padding-bottom: 16px;
-   border-bottom: 4px solid red;
-   font-weight: bold;
-   font-size: 1.6em;
+
+
+.post-item{
+   
+   background-color: var(--color-pure-white);
+   border-radius: 35px;
 }
+
 
 @media (max-width: 767px) {
-   #post-item {
+   .post-item {
       border-bottom: 1px solid red;
    }
 }
