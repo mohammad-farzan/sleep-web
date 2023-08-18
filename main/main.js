@@ -37,3 +37,50 @@ rightSide.forEach((element) => {
 leftSide.forEach((element) => {
   observer.observe(element);
 });
+
+/* //////////////////// sec-2 owl-text-carousel //////////////////// */
+const pervIcon = '<i class="fa-solid fa-chevron-left fa-2xl"></i> ';
+const nextIcon = '<i class="fa-solid fa-chevron-right fa-2xl"></i>';
+const owlText = $('.owl-text-carousel');
+owlText.owlCarousel({
+  loop: true,
+  autoplay: true,
+  margin: 10,
+  nav: true,
+  navText: [
+    pervIcon,
+    nextIcon
+  ],
+  dots: false,
+  responsive: {
+    0: {
+      items: 1
+    }
+  }
+});
+/* //////////////////// sec-3 owl carousel //////////////////// */
+const owl = $('.owl-carousel');
+owl.owlCarousel({
+  loop: true,
+  margin: 10,
+  nav: true,
+  navText: [
+    pervIcon,
+    nextIcon
+  ],
+  dots: false,
+  responsive: {
+    0: {
+      items: 1
+    },
+    600: {
+      items: 3
+    },
+    900:{
+      items:4
+    },
+    1350: {
+      items: 5
+    }
+  }
+});

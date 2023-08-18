@@ -12,8 +12,11 @@
 
 /* //////////////////// navbar //////////////////// */
 .navbar {
-   background-color: rgba(0, 0, 0, 0.9);
-   color: #d0d0d0;
+   background: transparent;
+   -webkit-backdrop-filter: blur(10px);
+   backdrop-filter: blur(10px);
+   box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+   color: var(--gray);
    font-size: 1.1em;
    font-weight: bold;
 }
@@ -32,9 +35,36 @@
    box-shadow: none;
    border-radius: 5px;
    margin-left: 8px;
-   
 }
 
+/* //////////////////// nav-button //////////////////// */
+
+#nav-double-button .nav-button {
+   display: inline-block;
+   border-radius: 20px;
+}
+
+#nav-button-1 {
+   background-color: #ff9f50;
+   color: var(--dark-purple);
+   padding: 8px 44px 8px 16px;
+   margin-right: -40px;
+}
+
+#nav-button-2 {
+   background-color: var(--redish-pink);
+   color: var(--pure-white);
+   padding: 8px 16px;
+}
+
+#nav-button-1:hover {
+   background-color: var(--orange);
+   color: var(--pure-white);
+}
+
+#nav-button-2:hover {
+   background-color: #d10460;
+}
 /* //////////////////// search-bar //////////////////// */
 
 form #search-btn {
@@ -58,10 +88,7 @@ form #search-bar.opened {
    width: 250px;
 }
 
-
-
 /* //////////////////// side-bar //////////////////// */
-
 
 #side-bar {
    width: 180px;
@@ -75,11 +102,10 @@ form #search-bar.opened {
    overflow-x: hidden;
    list-style: none;
    transition: .3s;
-
 }
 
 .mycard {
-   border-bottom  : 1px solid var(--gray);
+   border-bottom: 1px solid var(--gray);
    padding-top: 20px;
    border-radius: 0;
    background: rgba(0, 0, 0, 0);
@@ -90,9 +116,7 @@ form #search-bar.opened {
    background-color: var(--dark-blue);
    color: var(--gray);
    transition: .3s;
-
 }
-
 
 #side-bar.closed {
    left: -180px;
@@ -104,7 +128,7 @@ form #search-bar.opened {
 
 /* //////////////////// media screen //////////////////// */
 
-@media (max-width: 750px){
+@media (max-width: 750px) {
    form #search-bar.opened {
       width: 35vw;
    }
