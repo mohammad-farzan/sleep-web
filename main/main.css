@@ -1,12 +1,3 @@
-* {
-   margin: 0;
-   padding: 0;
-}
-
-body {
-   height: 1000px;
-}
-
 :root {
    --color-dark-blue: #001220;
    --color-dark-purple: #2a0b45;
@@ -16,6 +7,12 @@ body {
    --color-orange: #F5730A;
    --color-gray: #d0d0d0;
    --color-pure-white: #ffffff;
+}
+
+/* //////////////////// body //////////////////// */
+* {
+   margin: 0;
+   padding: 0;
 }
 
 /* //////////////////// header //////////////////// */
@@ -43,36 +40,144 @@ header {
    margin-bottom: 20px;
 }
 
-/* //////////////////// header //////////////////// */
 /* //////////////////// main //////////////////// */
 main {
    background-color: var(--color-dark-purple);
-   height: 5000px;
    padding: 1px;
 }
 
+/* //////////////////// sec-1 //////////////////// */
 .post {
    color: #001220;
    padding: 1em;
    border: 0.1em solid white;
-   background-color: var(--color-gray);
+   background-color: var(--color-orange);
    border-radius: 35px;
-
 }
 
-
-
-.post-item{
-   
+.post-item {
    background-color: var(--color-pure-white);
    border-radius: 35px;
 }
+/* //////////////////// sec-2 owl-text-carousel//////////////////// */
+#sec-2-owl {
+   background-color: #ab0650;
+   padding: 20px;
+}
 
+.owl-container {
+   max-width: 56em;
+   margin: 0 auto;
+}
 
+.owl-head {
+   text-align: center;
+   text-transform: capitalize;
+   padding: 0 10vw;
+   margin-bottom: 40px;
+   color: var(--color-pure-white);
+   font-size: 30px;
+   font-weight: bold;
+}
+
+.owl-text {
+   font-weight: bold;
+   line-height: 30px;
+   height: 200px;
+   margin: 0 150px;
+   display: flex;
+   text-align: center;
+   justify-content: center;
+   align-items: center;
+}
+
+.owl-text p {
+   margin: 0;
+}
+
+/* //////////////////// sec-3 owl carousel//////////////////// */
+#sec-3-owl {
+   background-color: #F5730A;
+   padding: 20px;
+}
+
+.owl-category {
+   text-align: center;
+   text-transform: capitalize;
+   padding: 0 10vw;
+   margin-bottom: 40px;
+   color: var(--color-pure-white);
+   font-size: 30px;
+   font-weight: bold;
+}
+
+/* //////////////////// this must change //////////////////// */
+.section-post {
+   background-image: url(../pic/bg-h-bt.svg);
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   padding: 0;
+   margin: 0 15px;
+   border-radius: 5px;
+}
+
+.section-text {
+   height: 200px;
+   transition: 0.45s;
+   padding: 20px;
+   color: transparent;
+   cursor: pointer;
+   border-radius: 5px;
+}
+
+.section-text:hover {
+   color: #fff;
+   background-color: rgba(0, 0, 0, 0.3);
+   border-radius: 5px;
+}
+
+/* //////////////////// this must change //////////////////// */
+.owl-nav button i {
+   color: #fff;
+}
+
+.owl-nav button {
+   background-color: transparent !important;
+   border: none !important;
+   outline-style: none;
+   transition: all 1s ease;
+   opacity: 0.2;
+}
+
+.owl-nav button:hover {
+   background-color: transparent !important;
+   border: none !important;
+   outline-style: none;
+   opacity: 1;
+}
+
+.owl-prev,
+.owl-next {
+   position: absolute;
+   top: 0%;
+   width: 5em;
+   height: 200px;
+}
+
+.owl-prev {
+   left: 0;
+   margin: 0 0 0 15px !important;
+}
+
+.owl-next {
+   right: 0;
+   margin: 0 15px 0 0 !important;
+}
+
+/* //////////////////// media screen //////////////////// */
 @media (max-width: 767px) {
    .post-item {
       border-bottom: 1px solid red;
    }
 }
-
-/* //////////////////// main //////////////////// */
