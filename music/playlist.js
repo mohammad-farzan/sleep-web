@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const musicDirectory = "c:\\Users\\mohammad\\Desktop\\s-w\\music\\musics";
+const musicDirectory = ".\\music\\musics";
 
 fs.readdir(musicDirectory, (err, files) => {
   if (err) {
