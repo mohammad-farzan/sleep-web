@@ -1,87 +1,17 @@
-* {
-   margin: 0;
-   padding: 0;
+.test-owl{
+  margin: 30px;
+  background-color: rgb(170, 170, 170);
+  text-align: center;
+  color: white;
+  border-radius: 30px;
 }
 
-body {
-   background-color: rgb(45, 45, 45);
-   padding: 50px;
+.question{
+  margin: 15px;
 }
-/* ////////////////////////////////////////// */
-.q-num p {
-   color: red;
-   font-size: 2em;
-   font-weight: bold;
-}
-
-.q-num ul {
-   list-style-type: none;
-}
-
-.q-num ul li {
-   color: #fff;
-   margin: 16px 0 0;
-}
-
-.q-num ul li input {
-   margin-right: 16px;
-   cursor: pointer;
-
-}
-
-.q-num button {
-   margin: 8px 0;
-   padding: 8px 16px;
-   font-size: 1.2em;
-   background-color: pink;
-}
-
-/* ///////////////////////////////// */
-.owl-nav button i {
-   color: #fff;
-}
-
-.owl-nav button {
-   /* background-color: transparent !important; */
-   background-color: aqua !important;
-   /* border: none !important; */
-   /* outline-style: none; */
-   /* transition: all 1s ease; */
-   /* opacity: 0.2; */
-}
-
-.owl-nav button:hover {
-   /* background-color: transparent !important; */
-   border: none !important;
-   /* outline-style: none; */
-   /* opacity: 1; */
-}
-
-.owl-nav{
-   position: absolute;
-}
-.owl-prev,
-.owl-next {
-   /* position: absolute; */
-   /* top: 0%; */
-   left: 0;
-   width: 5em;
-   height: 3em;
-}
-
-.owl-prev {
-   /* position: absolute; */
-   /* left: 0; */
-   margin: 0 0 0 15px !important;
-   
-   
-   /* display: none !important; */
-
-   
-}
-
-.owl-next {
-   /* position: absolute; */
-   /* left: 0; */
-   margin: 0 15px 0 0 !important;
+label{
+  margin:5px;
+  padding:10px;
+  background-color: #001220;
+  border-radius: 15px;
 }
