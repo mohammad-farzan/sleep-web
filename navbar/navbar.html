@@ -2,68 +2,68 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
 
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top py-0">
+   <nav class="navbar navbar-expand-lg fixed-top py-0">
 
-        <a class="navbar-brand" href="#">
-            <img src="../pic/moon.svg" class="d-inline-block" width="50" height="50" alt="Logo">
-        </a>
-        <div class="navbar-collapse collapse ">
-            <ul class="navbar-nav ml-auto w-100">
-                <li class="nav-item"><a href="#" class="nav-link active">Home<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Meditation</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="../music/music_player.html">Music</a>
-                        <a class="dropdown-item" href="#">Mini game</a>
-                    </div>
-                </li>
-                <li class="nav-item"><a href="#" class="nav-link">Sleep Topics</a></li>
-                <li class="nav-item "><a href="#" class="nav-link">About Us</a></li>
-                <li id="nav-double-button" class="nav-item ml-lg-auto">
-                    <a href="../login-signup/login.html" id="nav-button-1" class="nav-link nav-button">Log In</a>
-                    <a href="#" id="nav-button-2" class="nav-link nav-button">Sign Up</a>
-                </li>
-            </ul>
-        </div>
-        <div class="row">
-            <form class="d-flex align-items-center col">
-                <i class="fa fa-search" onclick="searchToggle()" id="search-btn"></i>
-                <input class="closed form-control" type="text" id="search-bar" placeholder="Search">
-            </form>
-            <div class="btn d-lg-none col m-0 mr-3" onclick="sideBarToggle()" id="sidebar-btn">
-                <i class="fa fa-bars" aria-hidden="true"></i>
-            </div>
-        </div>
-        </div>
-    </nav>
+      <a class="navbar-brand" href="../main/main.html">
+         <img src="../pic/moon.svg" class="d-inline-block" width="50" height="50" alt="Logo">
+      </a>
+      <div class="navbar-collapse collapse ">
+         <ul class="navbar-nav ml-auto w-100">
+            <li class="nav-item"><a href="../main/main.html" class="nav-link active">Home</a></li>
+            <li class="nav-item dropdown">
+               <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Meditation</a>
+               <div class="dropdown-menu">
+                  <a class="dropdown-item" href="../music/music_player.html">Music</a>
+                  <a class="dropdown-item" href="#">Mini game</a>
+               </div>
+            </li>
+            <li class="nav-item"><a href="#" class="nav-link">Sleep Topics</a></li>
+            <li class="nav-item "><a href="#" class="nav-link">About Us</a></li>
+            <li id="nav-double-button" class="nav-item ml-lg-auto">
+               <a href="../login_signup/login.html" id="nav-button-1" class="nav-link nav-button">Log In</a>
+               <a href="../login_signup/signup.html" id="nav-button-2" class="nav-link nav-button">Sign Up</a>
+            </li>
+         </ul>
+      </div>
+      <div class="row">
+         <form class="d-flex align-items-center col">
+            <i class="fa fa-search" onclick="searchToggle()" id="search-btn"></i>
+            <input class="closed form-control" type="text" id="search-bar" placeholder="Search">
+         </form>
+         <div class="multicolor-btn btn d-lg-none col m-0 mr-3 " onclick="sideBarToggle()" id="sidebar-btn">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+         </div>
+      </div>
+      </div>
+   </nav>
 
-    <div id="side-bar" class="closed d-lg-none">
-        <div class="card mycard">
-            <img class="card-img-top" src="/pic/moon.svg" alt="">
-            <div class="card-body">
-                <h4 class="card-title center">name</h4>
-                <p class="card-text">email.com</p>
-            </div>
-        </div>
-        <ul>
-            <li class="nav-item"><a href="#" class="nav-link">Log In</a></li>
-            <li class="nav-item"><a class="nav-link" href="../music/music_player.html">Music</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Meditation</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Mini game</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
-        </ul>
-    </div>
+   <div id="side-bar" class="closed d-lg-none">
+      <div id="top-of-sidebar">
+         <p class="card-title center">Full Name</p>
+         <p class="card-text">mamad_farzan@email.com</p>
+      </div>
 
+      <ul id="buttom-of-sidebar">
+         <li class=""><a class="" href="../main/main.html"><i class="fa-solid fa-house"></i>Home</a></li>
+         <li class=""><a href="#" class=""><i class="fa-solid fa-bed"></i>Sleep Topics</a></li>
+         <li class=""><a class="dropdown-item" href="../music/music_player.html"><i class="fa-solid fa-music"></i>Music</a></li>
+         <li class=""><a class="dropdown-item" href="#"><i class="fa-solid fa-gamepad"></i>Mini game</a></li>
+         <li class=""><a class="" href="#"><i class="fa-solid fa-address-card"></i>About Us</a></li>
+         <li id="sidebar-double-button" class="row">
+            <a href="../login_signup/login.html" id="sidebar-button-1" class="col sidebar-button">Log In</a>
+            <a href="../login_signup/signup.html" id="sidebar-button-2" class="col sidebar-button">Sign Up</a>
+         </li>
+      </ul>
+   </div>
 
+   <script src="https://kit.fontawesome.com/3ed04dad16.js"></script>
 </body>
 
 </html>

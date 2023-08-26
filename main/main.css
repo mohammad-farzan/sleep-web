@@ -30,14 +30,16 @@ header {
    font-weight: bold;
 }
 
-#header-btn {
-   margin: 0;
-   font-weight: bold;
-}
-
 .header .header-h1,
 .header-paragraph {
    margin-bottom: 20px;
+}
+
+/* //////////////////// header-button //////////////////// */
+/* outher style's is in navbar.css */
+
+#multicolor-header-btn{
+   font-size: 1.6em;
 }
 
 /* //////////////////// main //////////////////// */
@@ -47,18 +49,13 @@ main {
 }
 
 /* //////////////////// sec-1 //////////////////// */
-.post {
-   color: #001220;
-   padding: 1em;
-   border: 0.1em solid white;
-   background-color: var(--color-orange);
-   border-radius: 35px;
+#sec-1 {
+   display: flex;
+   justify-content: center;
+   background-color: cadetblue;
+   color: var(--color-pure-white);
 }
 
-.post-item {
-   background-color: var(--color-pure-white);
-   border-radius: 35px;
-}
 /* //////////////////// sec-2 owl-text-carousel//////////////////// */
 #sec-2-owl {
    background-color: #ab0650;
@@ -74,7 +71,7 @@ main {
    text-align: center;
    text-transform: capitalize;
    padding: 0 10vw;
-   margin-bottom: 40px;
+   margin-bottom: 30px;
    color: var(--color-pure-white);
    font-size: 30px;
    font-weight: bold;
@@ -113,7 +110,7 @@ main {
 
 /* //////////////////// this must change //////////////////// */
 .section-post {
-   background-image: url(../pic/bg-h-bt.svg);
+   /* background-image: url(../pic/bg-h-bt.svg); */
    background-position: center;
    background-size: cover;
    background-repeat: no-repeat;
@@ -121,6 +118,47 @@ main {
    margin: 0 15px;
    border-radius: 5px;
 }
+
+#post-img-1 {
+   background-image: url(../pic/gaaaayy.jpg);
+}
+
+#post-img-2 {
+   background-image: url(../pic/sad-duff-girl.jpg);
+}
+
+#post-img-3 {
+   background-image: url(../pic/duff-girl-in-plastic-sky.jpg);
+}
+
+#post-img-4 {
+   background-image: url(../pic/sleeping-woman-at-night.jpg);
+}
+
+#post-img-5 {
+   background-image: url(../pic/ugly-girl.jpg);
+}
+
+#post-img-6 {
+   background-image: url(../pic/traveling-sleepeer.jpg);
+}
+
+#post-img-7 {
+   background-image: url(../pic/night-brain-day.jpg);
+}
+
+#post-img-8 {
+   background-image: url(../pic/dark-bedroom.jpg);
+}
+
+#post-img-9 {
+   background-image: url(../pic/coffee-and-book.jpg);
+}
+
+#post-img-10 {
+   background-image: url(../pic/bed-on-the-cluod.jpg);
+}
+
 
 .section-text {
    height: 200px;
@@ -177,7 +215,38 @@ main {
 
 /* //////////////////// media screen //////////////////// */
 @media (max-width: 767px) {
-   .post-item {
-      border-bottom: 1px solid red;
+   #posts {
+      background-color: rgb(35, 35, 35);
+   }
+
+   #posts .imgs {
+      padding: 0;
+   }
+
+   #posts .pic-text p {
+      margin: 0;
+   }
+
+   #posts .pic-text small {
+      display: none;
+   }
+}
+
+@media (max-width: 650px) {
+   .owl-nav {
+      display: none;
+   }
+
+   .owl-head {
+      margin-bottom: 20px;
+   }
+
+   .owl-text {
+      padding: 2vw 4vw;
+      font-weight: 500;
+      line-height: 25px;
+      height: 100%;
+      width: 100%;
+      margin: 0;
    }
 }

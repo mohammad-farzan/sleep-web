@@ -21,20 +21,49 @@
    font-weight: bold;
 }
 
-.nav-item .nav-link,
-.btn {
+.nav-item .nav-link {
    font-weight: inherit;
    font-size: inherit;
    color: inherit;
 }
 
-.btn {
-   color: white;
-   background: linear-gradient(45deg, var(--color-pinkish-purple) 10%, var(--color-redish-pink)35%, var(--color-red)75%, var(--color-orange)100%);
-   border: none;
-   box-shadow: none;
-   border-radius: 5px;
-   margin-left: 8px;
+/* //////////////////// header-button //////////////////// */
+.multicolor-btn {
+   display: inline-block;
+   transition: .4s linear;
+   --s: 1.09em;
+   padding: 0 10px;
+   border-radius: 0.2em;
+   background:
+      conic-gradient(from 120deg at top, #2a0b45 120deg, #0000 0),
+      conic-gradient(from 120deg at top, #6d0354 120deg, #0000 0),
+      conic-gradient(from 120deg at top, #db393b 120deg, #0000 0),
+      conic-gradient(from 120deg at top, #F5730A 120deg, #0000 0);
+   background-repeat: repeat-x;
+   background-size: calc(var(--s)/0.577) var(--s);
+   background-position: 50% calc(100% + var(--s));
+   color: #fff !important;
+   text-align: center;
+   font-size: 1.3em;
+   line-height: 1.6em;
+   cursor: pointer;
+   /* background-color: #f5740a4e; */
+   /* border:1px solid #F5730A; */
+}
+
+.multicolor-btn:hover {
+   /* border: none;
+   transition: 0.4s linear; */
+   background-position:
+      50% calc(100% + var(--s)/2),
+      50% calc(100% + 0px),
+      50% calc(100% - var(--s)/2),
+      50% calc(100% - var(--s));
+}
+
+.multicolor-btn:before,
+.multicolor-btn:after {
+   pointer-events: none;
 }
 
 /* //////////////////// nav-button //////////////////// */
@@ -65,6 +94,7 @@
 #nav-button-2:hover {
    background-color: #d10460;
 }
+
 /* //////////////////// search-bar //////////////////// */
 
 form #search-btn {
@@ -91,45 +121,107 @@ form #search-bar.opened {
 /* //////////////////// side-bar //////////////////// */
 
 #side-bar {
-   width: 180px;
-   height: 100vh;
    position: fixed;
-   background-image: url(../pic/bg-v-lr.svg);
-   background-repeat: no-repeat;
-   background-size: cover;
-   color: var(--pure-white);
    z-index: 9999;
    overflow-x: hidden;
+   transition: .3s;
+   background: transparent;
+   -webkit-backdrop-filter: blur(90px);
+   backdrop-filter: blur(90px);
+   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.8);
+   width: 45vw;
+   height: 100vh;
+}
+
+#top-of-sidebar {
+   padding: 50px 10px 50px 40px;
+   background: rgba(0, 0, 0, 0.2);
+   color: var(--pure-white);
+}
+
+#top-of-sidebar p:first-child {
+   font-size: 1.8em;
+   font-weight: bold;
+}
+
+#buttom-of-sidebar {
    list-style: none;
-   transition: .3s;
+   margin: 0;
 }
 
-.mycard {
-   border-bottom: 1px solid var(--gray);
-   padding-top: 20px;
-   border-radius: 0;
-   background: rgba(0, 0, 0, 0);
+#buttom-of-sidebar li a {
+   display: block;
+   text-decoration: none;
+   padding: 16px 20px;
+   border-top: 1px solid rgba(0, 0, 0, 0.2);
    color: var(--gray);
 }
 
-#side-bar li :hover {
-   background-color: var(--dark-blue);
-   color: var(--gray);
+#buttom-of-sidebar li a i {
+   font-size: large;
+   color: var(--pure-white);
+   padding: 0 16px 0 0;
+}
+
+#buttom-of-sidebar li:hover {
    transition: .3s;
+   background: rgba(0, 0, 0, 0.2);
+   color: var(--pure-white);
 }
 
 #side-bar.closed {
-   left: -180px;
+   left: -50vw;
 }
 
 #side-bar.opened {
    left: 0;
 }
 
-/* //////////////////// media screen //////////////////// */
+/* //////////////////// sidebar-button //////////////////// */
+#sidebar-double-button .sidebar-button {
+   /* margin-top: 1em; */
+   padding: 16px 0;
+   text-align: center;
+   transition: 0.4s;
+}
 
+#sidebar-button-1 {
+   background-color: #f5740ad5;
+   color: var(--dark-purple);
+}
+
+#sidebar-button-2 {
+   margin-right: 15px;
+   background-color: var(--redish-pink);
+   color: var(--pure-white);
+}
+
+#sidebar-button-1:hover {
+   background-color: var(--orange);
+   color: var(--pure-white);
+}
+
+#sidebar-button-2:hover {
+   background-color: #d10460;
+}
+
+#buttom-of-sidebar #sidebar-double-button:hover {
+   background: none;
+}
+
+/* //////////////////// media screen //////////////////// */
 @media (max-width: 750px) {
    form #search-bar.opened {
       width: 35vw;
+   }
+}
+
+@media (max-width: 576px) {
+   #side-bar {
+      width: 75vw;
+   }
+
+   #side-bar.closed {
+      left: -100vw;
    }
 }
