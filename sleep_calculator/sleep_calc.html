@@ -1,23 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <title>sleep-test</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  <link rel="stylesheet"
+  
+  <head>
+    <title>sleep-test</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
-  <link rel="stylesheet" href="../sleep_calculator/sleep_calc.css">
-</head>
-
-<body class="container">
-  <div>
+    <link rel="stylesheet" href="../sleep_calculator/sleep_calc.css">
+    <link rel="stylesheet" href="../navbar/navbar.css">
+  </head>
+  
+  <body>
+    <div id="replace_with_navbar"></div>
+    
+  <div class="sleep_calc container">
     <!------------------- clock ------------------->
     <section class="section-clock">
       <div class="hour">
@@ -31,13 +34,16 @@
       </div>
     </section>
     <!------------------- input num ------------------->
-    <section>
-      <div class="section-num">
+    <section class="section-calc">
+      <div class="calc-num">
         <input type="number" name="hour" value="6" min="0" max="23" id="hour" title="hour">
-        <input type="number" name="minute" value="30" min="0" max="59" id="minute" title="minute"><br />
+        <input type="number" name="minute" value="30" min="0" max="59" id="minute" title="minute">
       </div>
-      <button id="wake-up-btn">calculate wake up</button>
-      <button id="bed-time-btn">calculate bed time</button>
+      <div class="calc-btn">
+        <button id="wake-up-btn">calculate wake up</button>
+        <button id="bed-time-btn">calculate bed time</button>
+        <div id="p-btn">time</div>
+      </div>
       <div id="suggestions"></div>
     </section>
   </div>
@@ -47,6 +53,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="https://kit.fontawesome.com/3ed04dad16.js"></script>
+  <script src="../navbar/navbar.js"></script>
   <script src="./sleep_calc.js"></script>
 </body>
 
