@@ -4,24 +4,39 @@ const hr = document.querySelector('#hr');
 const mn = document.querySelector('#mn');
 const sc = document.querySelector('#sc');
 
-setInterval(() => {
 
-  let day = new Date();
-  let hh = day.getHours() * 30;
-  let mm = day.getMinutes() * deg;
-  let ss = day.getSeconds() * deg;
-
-  hr.style.transform = `rotateZ(${(hh) + (mm / 12)}deg)`;
-  mn.style.transform = `rotateZ(${mm}deg)`;
-  sc.style.transform = `rotateZ(${ss}deg)`;
-
-})
-/* //////////////////// input num //////////////////// */
 const hour = document.querySelector("#hour");
 const minute = document.querySelector("#minute");
 const suggsetContainer = document.querySelector("#suggestions");
 const wakeUpBtn = document.querySelector("#wake-up-btn");
 const sleepTime = document.querySelector("#bed-time-btn");
+
+function setClock(){
+  let hh = hour.value * 30;
+  let mm = minute.value * deg;
+
+  hr.style.transition = ".5s"
+  mn.style.transition = ".5s"
+  hr.style.transform = `rotateZ(${(hh) + (mm / 12)}deg)`;
+  mn.style.transform = `rotateZ(${mm}deg)`;
+}
+
+setInterval(() => {
+
+  if (hour.value == 0 && minute.value == 0) {
+    let day = new Date();
+    let hh = day.getHours() * 30;
+    let mm = day.getMinutes() * deg;
+    hr.style.transform = `rotateZ(${(hh) + (mm / 12)}deg)`;
+    mn.style.transform = `rotateZ(${mm}deg)`;
+  }else{
+    minute.addEventListener("change",setClock)
+    hour.addEventListener("change",setClock)
+  }
+
+})
+/* //////////////////// input num //////////////////// */
+
 
 function calculateWakeUp(hour, minute) {
   const rawMinute = parseInt(hour.value) * 60 + parseInt(minute.value);
