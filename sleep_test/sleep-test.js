@@ -1,6 +1,6 @@
 var myQuestions = [
    {
-      question: "are you an asshoul ?",
+      question: "are you a sleep walker ?",
       answers: {
          a: 'good',
          b: 'half good',
@@ -84,7 +84,6 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton) 
       let result = 0;
       for (let i = 0; i < questions.length; i++) {
 
-
          userAnswer = (answerContainers[i].querySelector('input[name=question' + i + ']:checked') || {}).value;
 
          switch (userAnswer) {
@@ -101,17 +100,23 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton) 
                calcAnswer.push(questions[i].percentage / 4)
                break;
             default:
+               calcAnswer.push(undefined)
                break;
 
          }
 
          if (calcAnswer[i] != undefined) {
             result += parseInt(calcAnswer[i])
+            resultsContainer.innerText = "your score is " + result + "%"
          }
 
       }
 
-      resultsContainer.innerText = "your score is " + result + "%"
+      if (calcAnswer.includes(undefined)) {
+         resultsContainer.innerText = "please answer all questions..."
+      }      
+
+
    }
 
    // show questions right away

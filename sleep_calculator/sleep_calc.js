@@ -23,17 +23,16 @@ function setClock(){
 
 setInterval(() => {
 
-  if (hour.value == 0 && minute.value == 0) {
+  if (hour.value == "00" && minute.value == "00") {
     let day = new Date();
     let hh = day.getHours() * 30;
     let mm = day.getMinutes() * deg;
     hr.style.transform = `rotateZ(${(hh) + (mm / 12)}deg)`;
     mn.style.transform = `rotateZ(${mm}deg)`;
-  }else{
-    minute.addEventListener("change",setClock)
-    hour.addEventListener("change",setClock)
   }
 
+  minute.addEventListener("change",setClock)
+  hour.addEventListener("change",setClock)
 })
 /* //////////////////// input num //////////////////// */
 
@@ -77,7 +76,6 @@ function calculateBedTime(hour, minute) {
     suggsetContainer.appendChild(suggest);
   }
 }
-
 
 sleepTime.addEventListener("click",function(){
   calculateBedTime(hour,minute)
