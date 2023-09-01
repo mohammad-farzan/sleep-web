@@ -14,11 +14,13 @@
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
   <link rel="stylesheet" href="../sleep_calculator/sleep_calc.css">
+  <link rel="stylesheet" href="../navbar/navbar.css">
 </head>
 
-<body class="container">
-  <div>
-    <!------------------- clock ------------------->
+<body>
+  <div id="replace_with_navbar"></div>
+
+  <div class="sleep_calc">
     <section class="section-clock">
       <div class="hour">
         <div class="hr" id="hr"></div>
@@ -26,16 +28,17 @@
       <div class="min">
         <div class="mn" id="mn"></div>
       </div>
-
     </section>
-    <!------------------- input num ------------------->
-    <section>
-      <div class="section-num">
+    
+    <section class="section-calc">
+      <div class="calc-num">
         <input type="number" name="hour" value="00" min="0" max="23" id="hour" title="hour">
-        <input type="number" name="minute" value="00" min="0" max="59" id="minute" title="minute"><br />
+        <input type="number" name="minute" value="00" min="0" max="59" id="minute" title="minute">
       </div>
-      <button id="wake-up-btn">calculate wake up</button>
-      <button id="bed-time-btn">calculate bed time</button>
+      <div class="calc-btn">
+        <button id="wake-up-btn">calculate wake up</button>
+        <button id="bed-time-btn">calculate bed time</button>
+      </div>
       <div id="suggestions"></div>
     </section>
   </div>
@@ -45,6 +48,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="https://kit.fontawesome.com/3ed04dad16.js"></script>
+  <script src="../navbar/navbar.js"></script>
   <script src="./sleep_calc.js"></script>
 </body>
 

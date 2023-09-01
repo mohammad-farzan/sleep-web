@@ -17,14 +17,12 @@
 }
 
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-image: url(../pic/bg-h-bt.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+    padding: 15vh 0 0;
 }
 
 /* //////////////////// clock //////////////////// */
@@ -43,7 +41,7 @@ body {
     background: transparent;
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 50%;
-    margin: 50px auto;
+    margin: 20px auto 40px;
     height: 350px;
     width: 350px;
 }
@@ -123,13 +121,79 @@ body {
 }
 
 /* //////////////////// input num //////////////////// */
-.section-num {
-    display: flex;
-    /* flex-wrap: wrap; */
-    justify-content: center;
-    align-items: center;
+.calc-num input{
+    text-align: center;
+    background-color: #ffb510;
+    width: 5em;
+    height: 2.3em;
+    font-weight: 500;
+    outline: none;
+    border: none;
+    border-radius: 6px;
 }
 
-/* #submitButton{
-    display: block;
-} */
+/* //////////////////// input num btn //////////////////// */
+.section-calc {
+    text-align: center;
+}
+
+.calc-btn button {
+    --color: #560bad;
+    font-family: inherit;
+    display: inline-block;
+    width: 11em;
+    height: 2.6em;
+    line-height: 2.5em;
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--color);
+    transition: color .5s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: var(--color);
+    outline: none;
+}
+
+.calc-btn button:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--color);
+    height: 200px;
+    width: 250px;
+    border-radius: 50%;
+}
+
+.calc-btn button:hover {
+    color: #fff;
+}
+
+.calc-btn #wake-up-btn:before {
+    top: 100%;
+    right: 100%;
+    transition: all .7s;
+}
+
+.calc-btn #wake-up-btn:hover:before {
+    top: -45px;
+    right: -45px;
+}
+
+.calc-btn #bed-time-btn:before {
+    top: 100%;
+    left: 100%;
+    transition: all .7s;
+}
+
+.calc-btn #bed-time-btn:hover:before {
+    top: -45px;
+    left: -45px;
+}
+
+.calc-btn button:active:before {
+    background: #3a0ca3;
+    transition: background 0s;
+}
