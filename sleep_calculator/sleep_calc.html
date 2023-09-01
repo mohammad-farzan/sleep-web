@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  
-  <head>
-    <title>sleep-test</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-    <link rel="stylesheet"
+
+<head>
+  <title>sleep-test</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="../sleep_calculator/sleep_calc.css">
-    <link rel="stylesheet" href="../navbar/navbar.css">
-  </head>
-  
-  <body>
-    <div id="replace_with_navbar"></div>
-    
-  <div class="sleep_calc container">
-    <!------------------- clock ------------------->
+  <link rel="stylesheet" href="../sleep_calculator/sleep_calc.css">
+  <link rel="stylesheet" href="../navbar/navbar.css">
+</head>
+
+<body>
+  <div id="replace_with_navbar"></div>
+
+  <div class="sleep_calc">
     <section class="section-clock">
       <div class="hour">
         <div class="hr" id="hr"></div>
@@ -29,9 +28,8 @@
       <div class="min">
         <div class="mn" id="mn"></div>
       </div>
-
     </section>
-    <!------------------- input num ------------------->
+    
     <section class="section-calc">
       <div class="calc-num">
         <input type="number" name="hour" value="00" min="0" max="23" id="hour" title="hour">
@@ -40,7 +38,6 @@
       <div class="calc-btn">
         <button id="wake-up-btn">calculate wake up</button>
         <button id="bed-time-btn">calculate bed time</button>
-        <div id="p-btn">time</div>
       </div>
       <div id="suggestions"></div>
     </section>
