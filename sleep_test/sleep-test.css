@@ -15,10 +15,14 @@
   padding: 0;
 }
 
-body {
+.parent-test-owl{
   display: flex;
+  justify-self: center;
   align-items: center;
-  justify-content: center;
+  height: 100%;
+}
+
+body {
   background-image: url(../pic/bg-h-bt.svg);
   background-position: center;
   background-repeat: no-repeat;

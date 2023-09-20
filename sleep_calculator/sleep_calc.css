@@ -16,13 +16,20 @@
     box-sizing: border-box;
 }
 
+.sleep_calc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
 body {
     background-image: url(../pic/bg-h-bt.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
-    padding: 15vh 0 0;
 }
 
 /* //////////////////// clock //////////////////// */
@@ -195,5 +202,4 @@ body {
 
 .calc-btn button:active:before {
     background: #3a0ca3;
-    transition: background 0s;
 }
