@@ -44,8 +44,8 @@ function calculateWakeUp(hour, minute) {
   for (let i = 3; i <= 6; i++) {
     const handledTime = (rawMinute + 90 * i) / 60;
     const roundedTime = (handledTime % 24).toFixed(2);
-    const suggest = document.createElement("div");
-    suggest.innerHTML = `<div> for ${i} cycles of REM wake up at : ${formatTime(roundedTime)}</div>`
+    const suggest = document.createElement("span");
+    suggest.innerHTML = `<span> ${formatTime(roundedTime)}</span>`
     suggsetContainer.appendChild(suggest);
   }
 }
@@ -71,8 +71,8 @@ function calculateBedTime(hour, minute) {
       handledTime += 24 
     }
     const roundedTime = (handledTime % 24).toFixed(2);
-    const suggest = document.createElement("div");
-    suggest.innerHTML = `<div> for ${i} cycles of REM sleep at : ${formatTime(roundedTime)}</div>`
+    const suggest = document.createElement("span");
+    suggest.innerHTML = `<span>${formatTime(roundedTime)}</span>`
     suggsetContainer.appendChild(suggest);
   }
 }

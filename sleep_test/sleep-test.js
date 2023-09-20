@@ -2,10 +2,10 @@ var myQuestions = [
    {
       question: "are you a sleep walker ?",
       answers: {
-         a: 'good',
-         b: 'half good',
-         c: 'half bad',
-         d: 'very bad'
+         a: 'good 1',
+         b: 'half good 1',
+         c: 'half bad 1',
+         d: 'very bad 1'
       },
       percentage: '16'
    },

@@ -39,27 +39,50 @@ header {
 /* outher style's is in navbar.css */
 
 #multicolor-header-btn{
+   text-decoration: none;
    font-size: 1.6em;
 }
 
 /* //////////////////// main //////////////////// */
 main {
    background-color: var(--color-dark-purple);
+   background-image: linear-gradient( #2a0b45,#52057B );
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-image: url(../pic/layered-peaks-haikei\ \(2\).svg);
+   background-position: center;
    padding: 1px;
 }
 
 /* //////////////////// sec-1 //////////////////// */
 #sec-1 {
+   margin: 7em auto 2em;
+   padding: 1em;
+   /* background-image: url(../pic/layered-peaks-haikei\ \(2\).svg); */
+   background-repeat: no-repeat;
+   background-size: cover;
    display: flex;
    justify-content: center;
-   background-color: cadetblue;
    color: var(--color-pure-white);
+}
+#posts{
+   border-radius: 5px;
 }
 
 /* //////////////////// sec-2 owl-text-carousel//////////////////// */
 #sec-2-owl {
-   background-color: #ab0650;
-   padding: 20px;
+   -webkit-backdrop-filter: blur(10px);
+   backdrop-filter: blur(10px);
+   -moz-webkit-backdrop-filter: blur(10px);
+   padding: 2vw;
+   background: transparent;
+   background-color: rgba(255, 255, 255, 0.06);
+   box-sizing: border-box;
+   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+   border-radius: 10px;
+   width: 70vw;
+   margin: 3em auto;
+   color: var(--color-pure-white);
 }
 
 .owl-container {
@@ -78,7 +101,7 @@ main {
 }
 
 .owl-text {
-   font-weight: bold;
+   font-weight: 400;
    line-height: 30px;
    height: 200px;
    margin: 0 150px;
@@ -94,7 +117,7 @@ main {
 
 /* //////////////////// sec-3 owl carousel//////////////////// */
 #sec-3-owl {
-   background-color: #F5730A;
+   margin: 3em auto;
    padding: 20px;
 }
 
@@ -108,9 +131,7 @@ main {
    font-weight: bold;
 }
 
-/* //////////////////// this must change //////////////////// */
 .section-post {
-   /* background-image: url(../pic/bg-h-bt.svg); */
    background-position: center;
    background-size: cover;
    background-repeat: no-repeat;
@@ -175,7 +196,6 @@ main {
    border-radius: 5px;
 }
 
-/* //////////////////// this must change //////////////////// */
 .owl-nav button i {
    color: #fff;
 }
@@ -193,6 +213,7 @@ main {
    border: none !important;
    outline-style: none;
    opacity: 1;
+   scale: 1.2;
 }
 
 .owl-prev,
@@ -214,6 +235,13 @@ main {
 }
 
 /* //////////////////// media screen //////////////////// */
+@media (max-width: 1080px) {
+   #sec-2-owl {
+      padding: 2vw;
+      width: 80vw;
+   }
+}
+
 @media (max-width: 767px) {
    #posts {
       background-color: rgb(35, 35, 35);
@@ -229,6 +257,11 @@ main {
 
    #posts .pic-text small {
       display: none;
+   }
+
+   #sec-2-owl {
+      padding: 2vw;
+      width: 85vw;
    }
 }
 
@@ -248,5 +281,9 @@ main {
       height: 100%;
       width: 100%;
       margin: 0;
+   }
+   #sec-2-owl {
+      padding: 2vw;
+      width: 90vw;
    }
 }

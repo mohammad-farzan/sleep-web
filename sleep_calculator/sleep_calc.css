@@ -17,12 +17,39 @@
 }
 
 body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     background-image: url(../pic/bg-h-bt.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    padding: 15vh 0 0;
+}
+
+/* //////////////////// calc box //////////////////// */
+#box {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sleep_calc {
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(50px);
+    -moz-webkit-backdrop-filter: blur(20px);
+    background: transparent;
+    background-color: rgba(255, 255, 255, 0.011);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    padding: 1vw;
+    border-radius: 10px;
+    width: 65vw;
 }
 
 /* //////////////////// clock //////////////////// */
@@ -121,7 +148,8 @@ body {
 }
 
 /* //////////////////// input num //////////////////// */
-.calc-num input{
+.calc-num input {
+    margin: 0 2px 20px;
     text-align: center;
     background-color: #ffb510;
     width: 5em;
@@ -132,49 +160,49 @@ body {
     border-radius: 6px;
 }
 
-/* //////////////////// input num btn //////////////////// */
+/* //////////////////// input calc btn //////////////////// */
 .section-calc {
     text-align: center;
 }
 
-.calc-btn button {
-    --color: #560bad;
+.calc-btn div {
+    background-color: #001220;
     font-family: inherit;
     display: inline-block;
     width: 11em;
     height: 2.6em;
     line-height: 2.5em;
-    margin: 20px;
+    margin: 0.4em 1em;
     position: relative;
     overflow: hidden;
-    border: 2px solid var(--color);
     transition: color .5s;
     z-index: 1;
     font-size: 17px;
     border-radius: 6px;
     font-weight: 500;
-    color: var(--color);
     outline: none;
+    cursor: pointer;
+    color: #d2cfcf;
 }
 
-.calc-btn button:before {
+.calc-btn div:before {
     content: "";
     position: absolute;
     z-index: -1;
-    background: var(--color);
     height: 200px;
     width: 250px;
     border-radius: 50%;
 }
 
-.calc-btn button:hover {
-    color: #fff;
-}
-
 .calc-btn #wake-up-btn:before {
+    background: url(../pic/day_btn.jpg);
     top: 100%;
     right: 100%;
     transition: all .7s;
+}
+
+.calc-btn #wake-up-btn:hover {
+    color: #111010;
 }
 
 .calc-btn #wake-up-btn:hover:before {
@@ -183,9 +211,14 @@ body {
 }
 
 .calc-btn #bed-time-btn:before {
+    background: url(../pic/night_btn.jpg);
     top: 100%;
     left: 100%;
     transition: all .7s;
+}
+
+.calc-btn #bed-time-btn:hover {
+    color: #fff;
 }
 
 .calc-btn #bed-time-btn:hover:before {
@@ -193,7 +226,131 @@ body {
     left: -45px;
 }
 
-.calc-btn button:active:before {
-    background: #3a0ca3;
+.calc-btn div:active:before {
+    background: #001220;
     transition: background 0s;
+}
+
+/* //////////////////// input time //////////////////// */
+#suggestions {
+    color: white;
+    text-align: center;
+    cursor: default;
+    margin: 0 0 0.5em ;
+}
+
+#suggestions span span {
+    background-color: rgba(0, 18, 32, 0.9);
+    display: inline-block;
+    width: 5em;
+    height: 2.6em;
+    line-height: 2.5em;
+    margin: 0.5em 1em;
+    transition: .5s;
+    font-size: 1em;
+    border-radius: 6px;
+    letter-spacing: 2px;
+    font-weight: bolder;
+}
+
+#suggestions span:nth-child(1) span,
+#suggestions span:nth-child(2) span {
+    box-shadow: inset 0 0 20px 0 rgb(255, 0, 0);
+    border: 1px solid rgba(255, 0, 0, 0.727);
+}
+
+#suggestions span:nth-child(3) span,
+#suggestions span:nth-child(4) span {
+    box-shadow: inset 0 0 20px 0 rgba(0, 222, 0, 0.883);
+    border: 1px solid rgba(0, 222, 0, 0.568);
+}
+
+/* ////////////////////  media screen ////////////////////  */
+@media (max-width: 790px) {
+    .sleep_calc {
+        padding: 1vw;
+        width: 90vw;
+    }
+}
+
+@media(max-width:540px) {
+    /* /// clock /// */
+    .section-clock {
+        height: 300px;
+        width: 300px;
+    }
+
+    .section-clock .hour,
+    .hr {
+        height: 140px;
+    }
+
+    .section-clock .min,
+    .mn {
+        height: 170px;
+    } 
+
+    .hr:before {
+        width: 6px;
+        height: 65px;
+    }
+
+    .mn:before {
+        width: 3px;
+        height: 80px;
+    }
+
+/* /// input calc btn /// */
+    .calc-btn div {
+        width: 10.2em;
+        height: 2.6em;
+        line-height: 2.5em;
+        margin: 0 0.4em;
+    }
+    /* /// input time /// */
+    #suggestions span span {
+        margin: 0.5em;
+    }
+}
+
+@media(max-width:440px) {
+        /* /// clock /// */
+        .section-clock {
+            height: 250px;
+            width: 250px;
+        }
+    
+        .section-clock .hour,
+        .hr {
+            height: 115px;
+        }
+    
+        .section-clock .min,
+        .mn {
+            height: 150px;
+        } 
+    
+        .hr:before {
+            height: 60px;
+        }
+    
+        .mn:before {
+            height: 70px;
+        }
+    /* /// input calc btn /// */
+    .calc-btn div {
+        width: 9.5em;
+        height: 2.6em;
+        line-height: 2.5em;
+        margin: 0 0.1em;
+        font-size: 16px;
+    }
+/* /// input time /// */
+    #suggestions span span {
+        margin: 0.5em 0.2em;
+        width: 4.5em;
+        height: 2.4em;
+        line-height: 2.32em;
+    }
+    /* /// width 358px ok /// */
 }

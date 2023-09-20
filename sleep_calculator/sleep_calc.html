@@ -19,29 +19,31 @@
 
 <body>
   <div id="replace_with_navbar"></div>
+  <section id="box">
+    <div class="sleep_calc">
+      <section class="section-clock">
+        <div class="hour">
+          <div class="hr" id="hr"></div>
+        </div>
+        <div class="min">
+          <div class="mn" id="mn"></div>
+        </div>
+      </section>
 
-  <div class="sleep_calc">
-    <section class="section-clock">
-      <div class="hour">
-        <div class="hr" id="hr"></div>
-      </div>
-      <div class="min">
-        <div class="mn" id="mn"></div>
-      </div>
-    </section>
-    
-    <section class="section-calc">
-      <div class="calc-num">
-        <input type="number" name="hour" value="00" min="0" max="23" id="hour" title="hour">
-        <input type="number" name="minute" value="00" min="0" max="59" id="minute" title="minute">
-      </div>
-      <div class="calc-btn">
-        <button id="wake-up-btn">calculate wake up</button>
-        <button id="bed-time-btn">calculate bed time</button>
-      </div>
-      <div id="suggestions"></div>
-    </section>
-  </div>
+      <section class="section-calc">
+        <div class="calc-num">
+          <input type="number" name="hour" value="00" min="0" max="23" id="hour" title="hour">
+          <input type="number" name="minute" value="00" min="0" max="59" id="minute" title="minute">
+        </div>
+        <div class="calc-btn">
+          <div id="wake-up-btn">calculate wake up</div>
+          <div id="bed-time-btn">calculate bed time</div>
+        </div>
+        <div id="suggestions"></div>
+      </section>
+    </div>
+  </section>
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>

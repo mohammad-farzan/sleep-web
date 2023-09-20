@@ -16,13 +16,23 @@
 }
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   background-image: url(../pic/bg-h-bt.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100vh;
+}
+
+#sleep-quiz {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
 }
 
@@ -39,7 +49,7 @@ body {
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
   text-align: center;
-  width: 70vw;
+  width: 60vw;
 }
 
 .item {
@@ -75,7 +85,7 @@ label:hover {
   background-color: var(--color-orange);
 }
 
-label:has(input[type=radio]:checked){
+label:has(input[type=radio]:checked) {
   background-color: var(--color-orange);
 
 }
@@ -163,4 +173,30 @@ label input {
 #results {
   margin: 8px;
   font-size: 1.1em;
+}
+
+/* ////////////////////  media screen ////////////////////  */
+
+@media (max-width: 1240px) {
+  .test-owl {
+    width: 70vw;
+  }
+}
+
+@media (max-width: 1080px) {
+  .test-owl {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 760px) {
+  .test-owl {
+    width: 93vw;
+  }
+}
+
+@media (max-width: 430px) {
+  #submit {
+    padding: 0.45em 0.8em;
+  }
 }
