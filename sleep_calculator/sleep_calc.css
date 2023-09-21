@@ -16,6 +16,15 @@
     box-sizing: border-box;
 }
 
+.sleep_calc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
 body {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
