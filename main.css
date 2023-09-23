@@ -32,12 +32,11 @@ header {
 
 .header .header-h1,
 .header-paragraph {
-   margin-bottom: 20px;
+   margin-bottom: 1em;
 }
 
 /* //////////////////// header-button //////////////////// */
 /* outher style's is in navbar.css */
-
 #multicolor-header-btn{
    text-decoration: none;
    font-size: 1.6em;
@@ -49,7 +48,7 @@ main {
    background-image: linear-gradient( #2a0b45,#52057B );
    background-repeat: no-repeat;
    background-size: cover;
-   background-image: url(../pic/layered-peaks-haikei\ \(2\).svg);
+   background-image: url(./pic/bg-h-tb.svg);
    background-position: center;
    padding: 1px;
 }
@@ -231,6 +230,7 @@ main {
 .owl-next {
    right: 0;
    margin: 0 15px 0 0 !important;
+   text-transform: capitalize;
 }
 
 /* //////////////////// media screen //////////////////// */
