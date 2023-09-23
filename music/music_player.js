@@ -1,3 +1,4 @@
+
 async function fetchMusicData() {
   try {
     const response = await fetch("./musicData.json");
@@ -8,6 +9,7 @@ async function fetchMusicData() {
     console.log(error);
   }
 }
+let isplaying = false;
 
 async function MusicPlayer() {
   await fetchMusicData();
@@ -21,28 +23,50 @@ async function MusicPlayer() {
   const perv = window.document.querySelector("#prev");
   const next = window.document.querySelector("#next");
   const timeLine = document.querySelector("#timeLine");
+  const image = document.createElement('img');
+  const curr_time = document.querySelector("#current-time")
+  const fullTime = document.querySelector("#fulltime")
+  const songCounter = document.querySelector("#song-counter")
+  const coverContainer = document.querySelector("#cover-container")
 
-  let isplaying = false;
+
+
   let songIndex = 0;
 
   loadSong(songs[songIndex]);
-
+  
   playToggle.addEventListener("click", playcurrentSong);
   next.addEventListener("click", nextSong);
   perv.addEventListener("click", prevSong);
 
-  function loadSong(song) {
+  async function loadSong (song) {
     SongTitle.innerText = song.slice(0,-4);
     audio.src = `./musics/${song}`;
-    // let cover = audio.getAttribute('src');
-    
-    // var image = document.createElement('img');
-    // image.src = cover;
-    // image.style.width = "512px"
-    // image.style.height = "512px"
-    // document.body.appendChild(image);
-  }
 
+    songCounter.textContent = `${songIndex + 1} music of ${songs.length}`
+    
+    try {
+      pause()
+      let picResponse = await fetch(`music_pics/${song.slice(0,-4)}.jpg`)
+      if (picResponse.ok == false || picResponse.status == 404) {
+        image.src = `music_pics/default.jpg`
+        throw new Error('no pics found!');
+      }else{
+        image.src = `music_pics/${song.slice(0,-4)}.jpg`
+      }
+      
+    } catch (error) {
+      console.log(error);
+    }
+    
+    
+
+
+    
+    coverContainer.appendChild(image);
+
+  }
+  
   function prevSong() {
     songIndex--;
 
@@ -50,11 +74,17 @@ async function MusicPlayer() {
       songIndex = songs.length - 1;
     }
 
+
     loadSong(songs[songIndex]);
+
     audio.play();
+    resume()
+    coverContainer.style.setProperty('--boxAfterBackColor','1');
     isplaying = true;
-    playToggle.firstChild.classList.replace("fa-play-circle", "fa-stop-circle");
+    playToggle.firstElementChild.classList.replace("fa-play-circle", "fa-stop-circle");
   }
+
+
 
   function nextSong() {
     songIndex++;
@@ -62,46 +92,111 @@ async function MusicPlayer() {
     if (songIndex > songs.length - 1) {
       songIndex = 0;
     }
+    // i was here last time 
 
+    // image.style.transform =" rotate(20deg)" 
+    // image.style.transform = "translate(300px)" 
     loadSong(songs[songIndex]);
 
     audio.play();
+    resume()
+    coverContainer.style.setProperty('--boxAfterBackColor','1');
     isplaying = true;
-    playToggle.firstChild.classList.replace("fa-play-circle", "fa-stop-circle");
+    playToggle.firstElementChild.classList.replace("fa-play-circle", "fa-stop-circle");
+    
   }
 
   function playcurrentSong() {
     if (isplaying) {
       audio.pause();
       isplaying = false;
-      playToggle.firstChild.classList.replace(
+      playToggle.firstElementChild.classList.replace(
         "fa-stop-circle",
         "fa-play-circle"
       );
+      pause()
+      coverContainer.style.setProperty('--boxAfterBackColor','0');
     } else {
       audio.play();
       isplaying = true;
-      playToggle.firstChild.classList.replace(
+      playToggle.firstElementChild.classList.replace(
         "fa-play-circle",
         "fa-stop-circle"
       );
+      resume()
+      coverContainer.style.setProperty('--boxAfterBackColor','1');
     }
   }
 
   audio.addEventListener("timeupdate", function () {
-    const progress = (audio.currentTime / audio.duration) * 100;
+    const progress = (audio.currentTime / audio.duration) * 10000;
     timeLine.value = progress;
+
+    let currentMinutes = Math.floor(audio.currentTime / 60);
+    let currentSeconds = Math.floor(audio.currentTime - currentMinutes * 60);
+
+    if (currentMinutes < 10) { currentMinutes = "0" + currentMinutes; }
+    if (currentSeconds < 10) { currentSeconds = "0" + currentSeconds; }
+    
+    curr_time.textContent = currentMinutes + ":" + currentSeconds;
+    
+    
   });
+  
+  audio.addEventListener("loadeddata" , function(){
+    let durationMinutes = Math.floor(audio.duration / 60);
+    let durationSeconds = Math.floor(audio.duration - durationMinutes * 60);
+    
+    if (durationMinutes < 10) { durationMinutes = "0" + durationMinutes; }
+    if (durationSeconds < 10) { durationSeconds = "0" + durationSeconds; }
+
+    fullTime.textContent = durationMinutes + ":" + durationSeconds;
+  })
+
+
+
 
   timeLine.addEventListener("input", function () {
-    const currentTime = audio.duration * (timeLine.value / 100);
+    const currentTime = audio.duration * (timeLine.value / 10000);
     audio.currentTime = currentTime;
+
   });
 
   audio.addEventListener("ended", nextSong);
 }
 
 MusicPlayer()
+
+
+////////  PARTICLE.JS ////////
+window.onload = function () {
+  Particles.init({
+  selector: ".background",
+  
+  });
+};
+const particles = Particles.init({
+  selector: ".background",
+  color: ["#03dac6", "#ff0266", "#ffffff"],
+  connectParticles: false,
+  speed : .5,
+  maxParticles: 200,
+
+
+});
+
+function pause() {
+  particles.options.connectParticles = false
+  // particles.pauseAnimation()
+}
+window.addEventListener("load",pause)
+
+
+function resume() {
+  particles.resumeAnimation();
+  particles.options.connectParticles = true
+  // particles.options.showParticles = true;
+}
 
 
 //////// OWL CARUSEL ////////
