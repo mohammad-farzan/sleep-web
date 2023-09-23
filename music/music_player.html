@@ -2,16 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <title>music</title>
+    <link rel="icon" href="./pic/moon.svg" type="image/x-icon">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Document</title>
+
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="shortcut icon" href="#" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" />
     <link rel="stylesheet" href="music_player.css">
     <link rel="stylesheet" href="../navbar/navbar.css">
 
@@ -26,7 +26,7 @@
         <div id="replace_with_navbar"></div>
     </header>
     <main>
-        <div   class="container d-flex flex-column justify-content-center ">
+        <div class="container d-flex flex-column justify-content-center ">
             <div id="song-counter" class="text-center h1 py-3"></div>
             <div class="parent-cover-container d-flex justify-content-center align-items-center">
                 <div id="cover-container" class="border-dance"></div>
@@ -35,18 +35,18 @@
             <div class="d-flex justify-content-center align-items-center">
                 <span id="current-time" class="pl-5">00:00</span>
                 <div class="d-flex w-100">
-                    <input type="range" name="timeLine" min="0" max="10000" value="0" class="w-100 m-2" id="timeLine">
+                    <input type="range" name="timeLine" title="range" min="0" max="10000" value="0" class="w-100 m-2" id="timeLine">
                 </div>
                 <span id="fulltime" class="pr-5"></span>
             </div>
             <div class="p-2 d-flex justify-content-around align-items-center">
-                <button id="prev" type="button" class="btn btn-primary rounded-circle bg-secondary border-0">
+                <button id="prev" type="button" title="btn" class="btn btn-primary rounded-circle bg-secondary border-0">
                     <i style="font-size: 4em;" class="fa fa-arrow-left" aria-hidden="true"></i>
                 </button>
-                <button id="play" type="button" class="btn btn-primary rounded-circle bg-secondary border-0">
+                <button id="play" type="button" title="btn" class="btn btn-primary rounded-circle bg-secondary border-0">
                     <i style="font-size: 4em;" class="fa fa-play-circle" aria-hidden="true"></i>
                 </button>
-                <button id="next" type="button" class="btn btn-primary rounded-circle bg-secondary border-0">
+                <button id="next" type="button" title="btn" class="btn btn-primary rounded-circle bg-secondary border-0">
                     <i style="font-size: 4em;" class="fa fa-arrow-right" aria-hidden="true"></i>
                 </button>
             </div>
@@ -56,9 +56,9 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/3ed04dad16.js"></script>
     <script src="../navbar/navbar.js"></script>
     <script src="music_player.js"></script>
 
