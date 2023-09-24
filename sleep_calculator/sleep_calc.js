@@ -11,6 +11,21 @@ const suggsetContainer = document.querySelector("#suggestions");
 const wakeUpBtn = document.querySelector("#wake-up-btn");
 const sleepTime = document.querySelector("#bed-time-btn");
 
+hour.addEventListener("input", (e) =>{
+  if (e.target.value > 23) {
+    e.target.value = 0
+  }if(e.target.value < 0){
+    e.target.value = 23
+  }
+})
+minute.addEventListener("input", (e) =>{
+  if (e.target.value > 59) {
+    e.target.value = 0
+  }if(e.target.value < 0){
+    e.target.value = 59
+  }
+})
+
 function setClock(){
   let hh = hour.value * 30;
   let mm = minute.value * deg;
