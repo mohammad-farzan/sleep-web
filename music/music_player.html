@@ -3,7 +3,7 @@
 
 <head>
     <title>music</title>
-    <link rel="icon" href="./pic/moon.svg" type="image/x-icon">
+    <link rel="icon" href="../pic/moon.svg" type="image/x-icon">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -17,16 +17,30 @@
     <canvas class="background"></canvas>
     <div id="replace_with_navbar"></div>
     <main>
+
+        <div class="notif container">
+            <i id="close-notif" class="fas fa-window-close float-right"></i>
+            <h3 class="text-center">notification</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat reiciendis, expedita error optio beatae
+                tempora hic? Voluptatum exercitationem quos vel quidem nihil inventore saepe odit alias, totam
+                reiciendis quod, non perferendis quam obcaecati laudantium, impedit dolorem. Molestiae, iure, modi
+                debitis voluptatem reiciendis ratione ex est, sapiente pariatur accusamus ipsam dolores. Eum sed eveniet
+                ullam natus culpa, nobis consectetur et quasi atque hic doloribus? Porro libero quam perferendis fugit
+                est culpa repudiandae. Enim, sit aut adipisci nemo dignissimos tenetur temporibus est debitis
+                reprehenderit iste, qui beatae ullam at aliquam sequi esse ipsum itaque et cupiditate id error
+                perspiciatis, quisquam fugiat? Aliquid.</p>
+        </div>
+
         <div id="box">
 
-            <div id="song-counter" class="float-left"></div>
+            <div id="song-counter"></div>
 
             <div class="parent-cover-container d-flex justify-content-center align-items-center">
                 <div id="cover-container" class="border-dance"></div>
             </div>
 
             <div id="song-title" class="">initial</div>
-            
+
             <div class="d-flex justify-content-center align-items-center">
                 <span id="current-time">00:00</span>
                 <div class="d-flex w-100">
@@ -36,21 +50,19 @@
             </div>
 
             <div id="music-button">
-                <span id="prev" type="button" title="btn"
-                    class="music-btns">
+                <span id="prev" type="button" title="btn" class="music-btns">
                     <i class="fa-solid fa-backward-step"></i>
                 </span>
-                <span id="play" type="button" title="btn"
-                    class="music-btns">
+                <span id="play" type="button" title="btn" class="music-btns">
                     <i class="fa-solid fa-circle-play"></i>
                 </span>
-                <span id="next" type="button" title="btn"
-                    class="music-btns">
+                <span id="next" type="button" title="btn" class="music-btns">
                     <i class="fa-solid fa-forward-step"></i>
                 </span>
             </div>
 
         </div>
+        <div class="notif-pop"><i class="fa fa-question" aria-hidden="true"></i></div>
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.2/particles.min.js"></script>

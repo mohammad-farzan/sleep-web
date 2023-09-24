@@ -190,6 +190,24 @@ const particles = Particles.init({
   ]
 });
 
+const CloseNotif = document.querySelector("#close-notif")
+const notifPop = document.querySelector(".notif-pop")
+const notif = document.querySelector(".notif")
+
+isDispalyed = true
+function showNotification(){
+  if (isDispalyed) {
+    isDispalyed = false;
+    notif.style.display = "none";
+  }else{
+    isDispalyed = true;
+    notif.style.display = "block";
+  }
+}
+
+CloseNotif.addEventListener("click",showNotification)
+notifPop.addEventListener("click",showNotification)
+
 function pause() {
   particles.options.connectParticles = false
 }
