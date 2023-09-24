@@ -1,4 +1,3 @@
-
 async function fetchMusicData() {
   try {
     const response = await fetch("./musicData.json");
@@ -9,13 +8,13 @@ async function fetchMusicData() {
     console.log(error);
   }
 }
+
 let isplaying = false;
 
 async function MusicPlayer() {
   await fetchMusicData();
 
   const songs = await fetchMusicData();
-
   const audio = new Audio();
 
   const SongTitle = window.document.querySelector("#song-title");
@@ -25,48 +24,40 @@ async function MusicPlayer() {
   const timeLine = document.querySelector("#timeLine");
   const image = document.createElement('img');
   const curr_time = document.querySelector("#current-time")
-  const fullTime = document.querySelector("#fulltime")
+  const fullTime = document.querySelector("#full-time")
   const songCounter = document.querySelector("#song-counter")
   const coverContainer = document.querySelector("#cover-container")
-
-
 
   let songIndex = 0;
 
   loadSong(songs[songIndex]);
-  
+
   playToggle.addEventListener("click", playcurrentSong);
   next.addEventListener("click", nextSong);
   perv.addEventListener("click", prevSong);
 
-  async function loadSong (song) {
-    SongTitle.innerText = song.slice(0,-4);
+  async function loadSong(song) {
+    SongTitle.innerText = song.slice(0, -4);
     audio.src = `./musics/${song}`;
 
-    songCounter.textContent = `${songIndex + 1} music of ${songs.length}`
-    
+    songCounter.textContent = `${songIndex + 1}/${songs.length}`
+
     try {
       pause()
-      let picResponse = await fetch(`music_pics/${song.slice(0,-4)}.jpg`)
+      let picResponse = await fetch(`music_pics/${song.slice(0, -4)}.jpg`)
       if (picResponse.ok == false || picResponse.status == 404) {
         image.src = `music_pics/default.jpg`
         throw new Error('no pics found!');
-      }else{
-        image.src = `music_pics/${song.slice(0,-4)}.jpg`
+      } else {
+        image.src = `music_pics/${song.slice(0, -4)}.jpg`
       }
-      
+
     } catch (error) {
       console.log(error);
     }
-    
-    
-
-
-    
     coverContainer.appendChild(image);
-
   }
-  
+
   function prevSong() {
     songIndex--;
 
@@ -74,14 +65,13 @@ async function MusicPlayer() {
       songIndex = songs.length - 1;
     }
 
-
     loadSong(songs[songIndex]);
 
     audio.play();
     resume()
-    coverContainer.style.setProperty('--boxAfterBackColor','1');
+    coverContainer.style.setProperty('--boxAfterBackColor', '1');
     isplaying = true;
-    playToggle.firstElementChild.classList.replace("fa-play-circle", "fa-stop-circle");
+    playToggle.firstElementChild.classList.replace("fa-circle-play", "fa-circle-pause");
   }
 
 
@@ -92,18 +82,15 @@ async function MusicPlayer() {
     if (songIndex > songs.length - 1) {
       songIndex = 0;
     }
-    // i was here last time 
 
-    // image.style.transform =" rotate(20deg)" 
-    // image.style.transform = "translate(300px)" 
     loadSong(songs[songIndex]);
 
     audio.play();
     resume()
-    coverContainer.style.setProperty('--boxAfterBackColor','1');
+    coverContainer.style.setProperty('--boxAfterBackColor', '1');
     isplaying = true;
-    playToggle.firstElementChild.classList.replace("fa-play-circle", "fa-stop-circle");
-    
+    playToggle.firstElementChild.classList.replace("fa-circle-play", "fa-circle-pause");
+
   }
 
   function playcurrentSong() {
@@ -111,20 +98,20 @@ async function MusicPlayer() {
       audio.pause();
       isplaying = false;
       playToggle.firstElementChild.classList.replace(
-        "fa-stop-circle",
-        "fa-play-circle"
+        "fa-circle-pause",
+        "fa-circle-play"
       );
       pause()
-      coverContainer.style.setProperty('--boxAfterBackColor','0');
+      coverContainer.style.setProperty('--boxAfterBackColor', '0');
     } else {
       audio.play();
       isplaying = true;
       playToggle.firstElementChild.classList.replace(
-        "fa-play-circle",
-        "fa-stop-circle"
+        "fa-circle-play",
+        "fa-circle-pause"
       );
       resume()
-      coverContainer.style.setProperty('--boxAfterBackColor','1');
+      coverContainer.style.setProperty('--boxAfterBackColor', '1');
     }
   }
 
@@ -137,29 +124,23 @@ async function MusicPlayer() {
 
     if (currentMinutes < 10) { currentMinutes = "0" + currentMinutes; }
     if (currentSeconds < 10) { currentSeconds = "0" + currentSeconds; }
-    
+
     curr_time.textContent = currentMinutes + ":" + currentSeconds;
-    
-    
   });
-  
-  audio.addEventListener("loadeddata" , function(){
+
+  audio.addEventListener("loadeddata", function () {
     let durationMinutes = Math.floor(audio.duration / 60);
     let durationSeconds = Math.floor(audio.duration - durationMinutes * 60);
-    
+
     if (durationMinutes < 10) { durationMinutes = "0" + durationMinutes; }
     if (durationSeconds < 10) { durationSeconds = "0" + durationSeconds; }
 
     fullTime.textContent = durationMinutes + ":" + durationSeconds;
   })
 
-
-
-
   timeLine.addEventListener("input", function () {
     const currentTime = audio.duration * (timeLine.value / 10000);
     audio.currentTime = currentTime;
-
   });
 
   audio.addEventListener("ended", nextSong);
@@ -167,59 +148,54 @@ async function MusicPlayer() {
 
 MusicPlayer()
 
-
 ////////  PARTICLE.JS ////////
 window.onload = function () {
   Particles.init({
-  selector: ".background",
-  
+    selector: ".background",
   });
 };
 const particles = Particles.init({
   selector: ".background",
   color: ["#03dac6", "#ff0266", "#ffffff"],
   connectParticles: false,
-  speed : .5,
-  maxParticles: 200,
-
-
+  speed: .5,
+  maxParticles: 220,
+  responsive: [
+    {
+      breakpoint:1200,
+      options: {
+        maxParticles:200,
+      }
+    }, {
+      breakpoint:1000,
+      options: {
+        maxParticles:150,
+      }
+    }, {
+      breakpoint:800,
+      options: {
+        maxParticles:100,
+      }
+    }, {
+      breakpoint:600,
+      options: {
+        maxParticles:80,
+      }
+    }, {
+      breakpoint:400,
+      options: {
+        maxParticles:50,
+      }
+    }
+  ]
 });
 
 function pause() {
   particles.options.connectParticles = false
-  // particles.pauseAnimation()
 }
-window.addEventListener("load",pause)
-
+window.addEventListener("load", pause)
 
 function resume() {
   particles.resumeAnimation();
   particles.options.connectParticles = true
-  // particles.options.showParticles = true;
 }
-
-
-//////// OWL CARUSEL ////////
-
-$(document).ready(function() {
-  $('.owl-carousel').owlCarousel({
-      loop: true,
-      margin: 10,
-      responsiveClass: true,
-      responsive: {
-          0: {
-              items: 1,
-              nav: true
-          },
-          600: {
-              items: 3,
-              nav: false
-          },
-          1000: {
-              items: 5,
-              nav: true,
-              loop: false
-          }
-      }
-  });
-});
